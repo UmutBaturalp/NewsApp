@@ -10,6 +10,7 @@ export default styles = StyleSheet.create({
     alignItems: 'center',
     paddingBottom: windowHeight * 0.05,
     backgroundColor: '#fff',
+    paddingTop: windowHeight * 0.02,
   },
 
   //-------------------------------

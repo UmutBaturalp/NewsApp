@@ -8,6 +8,7 @@ import {
   NewsTypeList,
   NewsList,
   NavBar,
+  News,
 } from '../../components';
 import {newsTypes, DATA} from '../../assets/Contans/index';
 console.log(newsTypes);
@@ -17,9 +18,8 @@ const Home = props => {
     <SafeAreaView>
       <View style={styles.container}>
         <ScrollView showsVerticalScrollIndicator={false}>
-          <Header />
           <WellcomeSection />
-          <NewsSection />
+          <News DATA={DATA} />
           <NewsTypeList data={newsTypes} />
           <NewsList navigation={navigation} data={DATA} />
         </ScrollView>

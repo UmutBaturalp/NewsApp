@@ -23,6 +23,22 @@ const DATA = [
     publishedTime: '2 saat önce',
     publishedDate: '2024-05-14',
   },
+  {
+    id: 4,
+    title: "Yeni Film Vizyona Girdi: 'Gizemli Adada Macera'",
+    image:
+      'https://media.istockphoto.com/id/473196991/tr/video/video-wall-lateral-and-high-view-loopable.jpg?s=640x640&k=20&c=whdWdHMWdbsYkj8lhGmR785PoB7m9LXEly4lSwqyYBY=',
+    publishedTime: '3 saat önce',
+    publishedDate: '2024-05-13',
+  },
+  {
+    id: 5,
+    title: 'Yapay Zeka İle Geleceğin Teknolojileri',
+    image:
+      'https://media.istockphoto.com/id/1464932994/tr/video/artificial-intelligence-processor-unit-powerful-quantum-ai-component-on-pcb-motherboard-with.jpg?s=640x640&k=20&c=u5AduIbqZi7_wMj56eyKJeqfrPPI6vK346TnUjqISWI=',
+    publishedTime: '4 saat önce',
+    publishedDate: '2024-05-13',
+  },
 ];
 
 export default DATA;
