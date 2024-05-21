@@ -3,8 +3,7 @@ import React from 'react';
 import styles from './styles';
 import {Icons} from '../../assets/';
 
-const Header = props => {
-  const {} = props;
+const Header = () => {
   return (
     <View>
       <View style={styles.header}>

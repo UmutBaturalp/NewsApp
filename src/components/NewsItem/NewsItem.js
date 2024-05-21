@@ -13,10 +13,10 @@ const NewsItem = props => {
       <View style={styles.wrapper}>
         <Image source={{uri: item.image}} style={styles.image} />
         <View style={styles.content}>
-          <Text style={styles.title}>{item.name}</Text>
+          <Text style={styles.title}>{item.title}</Text>
           <View style={styles.contentDate}>
-            <Text style={styles.date}>{item.source}</Text>
-            <Text numberOfLines={2} style={styles.date}></Text>
+            <Text style={styles.date}>{item.publishedTime}</Text>
+            <Text style={styles.date}>{item.publishedDate}</Text>
           </View>
         </View>
       </View>
