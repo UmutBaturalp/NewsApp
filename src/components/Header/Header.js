@@ -1,9 +1,12 @@
 import {View, Image, TextInput, TouchableOpacity} from 'react-native';
-import React from 'react';
+import React, {useState} from 'react';
 import styles from './styles';
 import {Icons} from '../../assets/';
 
-const Header = () => {
+const Header = props => {
+  const {} = props;
+  const [tag, setTag] = useState('');
+  console.log(tag);
   return (
     <View>
       <View style={styles.header}>
@@ -12,6 +15,7 @@ const Header = () => {
             style={styles.input}
             placeholder="Search News"
             placeholderTextColor={'#666'}
+            onChangeText={value => setTag(value)}
           />
           <TouchableOpacity>
             <Image

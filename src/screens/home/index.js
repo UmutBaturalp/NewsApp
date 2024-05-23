@@ -2,9 +2,7 @@ import {View, SafeAreaView, Dimensions, ScrollView} from 'react-native';
 import React, {useEffect, useState} from 'react';
 import styles from './styles';
 import {
-  Header,
   WellcomeSection,
-  NewsSection,
   NewsTypeList,
   NewsList,
   NavBar,
@@ -12,7 +10,7 @@ import {
 } from '../../components';
 import {newsTypes, DATA} from '../../assets/Contans/index';
 import {PlaceApi, Not} from '../../service';
-console.log(newsTypes);
+
 const Home = props => {
   const {navigation} = props;
   const country = 'tr';
@@ -35,14 +33,6 @@ const Home = props => {
       .catch(error => {
         console.error('Hata:', error);
       });
-
-    Not.PlaceApi(payload)
-      .then(data => {
-        console.log('Veri alındı:', data);
-      })
-      .catch(error => {
-        console.error('Hata:', error);
-      });
   };
 
   useEffect(() => {
@@ -53,9 +43,9 @@ const Home = props => {
       <View style={styles.container}>
         <ScrollView showsVerticalScrollIndicator={false}>
           <WellcomeSection />
-          <News DATA={news} />
+          {news && <News navigation={navigation} DATA={news} />}
           <NewsTypeList data={newsTypes} />
-          <NewsList navigation={navigation} data={news} />
+          {news && <NewsList navigation={navigation} data={news} />}
         </ScrollView>
       </View>
       <NavBar navBarItem="home" navigation={navigation} />

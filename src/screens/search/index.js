@@ -7,15 +7,14 @@ import {Not, PlaceApi} from '../../service';
 const TrendsScreen = props => {
   const {navigation} = props;
   const country = 'tr';
-  const tag = 'general';
-  const urlSent = `?country=${country}&tag=${tag}`;
   const payload = {
     title: 'Blog Title',
     body: 'lorem ipsum',
     userId: 1,
   };
   const [news, setNews] = useState([]);
-
+  const [tag, setTag] = useState('general');
+  const urlSent = `?country=${country}&tag=${tag}`;
   const data = () => {
     PlaceApi.getNewsApi(urlSent)
       .then(data => {
@@ -43,12 +42,6 @@ const TrendsScreen = props => {
     <SafeAreaView>
       <View style={styles.container}>
         <Header />
-        <TouchableOpacity
-          onPress={() => {
-            data();
-          }}>
-          <Text>Tikla</Text>
-        </TouchableOpacity>
         <NewsTypeSection data={newsTypes} />
         <View style={styles.infoSection}>
           <Text style={styles.infoTitle}>Top reads of the day</Text>

@@ -12,7 +12,7 @@ const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height - StatusBar.currentHeight;
 
 const News = props => {
-  const {DATA} = props;
+  const {DATA, navigation} = props;
   const [counter, setCounter] = useState(0);
   const [counter1, setCounter1] = useState(1);
   const [counter2, setCounter2] = useState(2);
@@ -34,20 +34,23 @@ const News = props => {
         style={styles.left}>
         <Image
           borderRadius={windowWidth * 0.05}
-          source={{uri: DATA[counter].image}}
-          style={styles.image}
+          source={{uri: DATA[counter]?.image}}
+          style={styles?.image}
         />
       </TouchableOpacity>
-      <View style={styles.center}>
+      <TouchableOpacity
+        activeOpacity={0.9}
+        style={styles.center}
+        onPress={() => navigation.navigate('Details', {item: DATA[counter1]})}>
         <Image
           source={{
-            uri: DATA[counter1].image,
+            uri: DATA[counter1]?.image,
           }}
           style={styles.image}
           borderRadius={windowWidth * 0.05}
         />
-        <Text style={styles.newsText}>{DATA[counter1].name}</Text>
-      </View>
+        <Text style={styles.newsText}>{DATA[counter1]?.name}</Text>
+      </TouchableOpacity>
       <TouchableOpacity
         onPress={() => {
           setCounter((counter + 1) % DATA.length);
@@ -58,7 +61,7 @@ const News = props => {
         <Image
           borderRadius={windowWidth * 0.05}
           source={{
-            uri: DATA[counter2].image,
+            uri: DATA[counter2]?.image,
           }}
           style={styles.image}
         />
